@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "onest";
+  src: url("../public/fonts/Onest-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+body {
+  background-color: rgb(23, 23, 23);
+  color: rgb(210, 213, 219);
+  font-family: "onest", "Roboto", sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  padding: 40px 0;
+  margin: 0 auto;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.project {
+  position: relative;
+  width: 390px;
+  height: 108px;
+  border: 1px solid rgba(212, 212, 212, 0.153);
+  border-radius: 12px;
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.552);
+}
+
+.technologies {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  bottom: 10px;
+  padding-right: 10px;
+}
+
+.technologie {
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: rgba(195, 195, 195, 0.1);
+  margin-right: 4px;
+}
+
+.stars {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.github-link {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
