@@ -1,0 +1,59 @@
+.name-github-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
+.github-contributions {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.react-calendar-heatmap {
+  width: 100%;
+}
+
+.color-empty {
+  /* fill: #171b22; */
+  fill: transparent;
+}
+
+.color-scale-1 {
+  fill: #164329;
+}
+
+.color-scale-2 {
+  fill: #1a6c33;
+}
+
+.color-scale-3 {
+  fill: #3aa545cf;
+}
+
+.color-scale-4 {
+  fill: #50d257ea;
+}
+
+/* Make the days bigger and more rounded */
+.react-calendar-heatmap .color-empty,
+.react-calendar-heatmap .color-scale-1,
+.react-calendar-heatmap .color-scale-2,
+.react-calendar-heatmap .color-scale-3,
+.react-calendar-heatmap .color-scale-4 {
+  width: 10px;
+  height: 10px;
+  rx: 14px;
+  ry: 14px;
+}
+
+.select_ {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(23, 23, 23);
+  color: rgba(255, 255, 255, 0.855);
+  padding: 6px 54px;
+  border: 2px solid rgba(255, 255, 255, 0.478);
+  border-radius: 8px;
+}
