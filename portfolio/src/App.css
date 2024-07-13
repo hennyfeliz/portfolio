@@ -4,10 +4,34 @@
   font-display: swap;
 }
 
+:root {
+  --light: #f6f6f9;
+  --primary: #1976d2;
+  --light-primary: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa9c;
+  --dark: #363949;
+  --dark--dk: #363949ad;
+  --dark-light: #3639495c;
+  --danger: #d32f2f;
+  --light-danger: #fecdd3;
+  --warning: #fbc02d;
+  --light-warning: #fff2c6;
+  --success: #388e3c;
+  --light-success: #bbf7d0;
+}
+
+body.dark {
+  --light: #181a1e;
+  --grey: #25252c;
+  --dark: #fbfbfb;
+}
+
 body {
-  background-color: rgb(23, 23, 23);
-  color: rgb(210, 213, 219);
+  background: var(--grey);
+  color: var(--dark);
   font-family: "onest", "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 .page-container {
@@ -32,8 +56,9 @@ body {
   position: relative;
   width: 390px;
   height: 108px;
-  border: 1px solid rgba(212, 212, 212, 0.153);
-  border-radius: 12px;
+  /* border: 1px solid rgba(212, 212, 212, 0.153); */
+  border: 1px solid var(--dark-light);
+  border-radius: 8px;
   padding: 20px;
   white-space: nowrap;
   overflow: hidden;
@@ -42,7 +67,8 @@ body {
 .text {
   text-overflow: ellipsis;
   overflow: hidden;
-  color: rgba(255, 255, 255, 0.552);
+  /* color: rgba(255, 255, 255, 0.552); */
+  color: var(--dark-grey);
 }
 
 .technologies {
@@ -58,7 +84,9 @@ body {
   font-size: 14px;
   padding: 2px 8px;
   border-radius: 4px;
-  background-color: rgba(195, 195, 195, 0.1);
+  /* background-color: rgba(195, 195, 195, 0.1); */
+  background-color: var(--dark-grey);
+  color: var(--dark);
   margin-right: 4px;
 }
 
@@ -82,4 +110,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.icon {
+  cursor: pointer;
 }
