@@ -8,28 +8,34 @@
   --light: #f6f6f9;
   --primary: #1976d2;
   --light-primary: #cfe8ff;
-  --grey: #eee;
-  --dark-grey: #aaaaaa9c;
+  --grey: #f5f5f5;
+  --dark-grey: #6666663f;
   --dark: #363949;
-  --dark--dk: #363949ad;
-  --dark-light: #3639495c;
+  --dark--dk: #e0e0e0ad;
+  --dark-light: #36394940;
   --danger: #d32f2f;
   --light-danger: #fecdd3;
   --warning: #fbc02d;
   --light-warning: #fff2c6;
   --success: #388e3c;
   --light-success: #bbf7d0;
+
+  /* additional colors */
+  --technology-bg: #e5e5e5ba;
+  --font: #1f1f1f;
 }
 
 body.dark {
   --light: #181a1e;
-  --grey: #25252c;
+  --grey: #171717;
+  --font: #f6f6f9e1;
   --dark: #fbfbfb;
+  --tecjnology-bg: #3b3b3b19;
 }
 
 body {
   background: var(--grey);
-  color: var(--dark);
+  color: var(--font);
   font-family: "onest", "Roboto", sans-serif;
   overflow-x: hidden;
 }
@@ -49,7 +55,6 @@ body {
   margin: 0 auto;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 20px;
 }
 
 .project {
@@ -57,18 +62,27 @@ body {
   width: 390px;
   height: 108px;
   /* border: 1px solid rgba(212, 212, 212, 0.153); */
-  border: 1px solid var(--dark-light);
+  border: 2px solid var(--dark-light);
   border-radius: 8px;
   padding: 20px;
   white-space: nowrap;
   overflow: hidden;
+  transition: border 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project:hover {
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
+  border: 2px solid var(--dark);
+  transform: translate(5px, -5px);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.306);
 }
 
 .text {
   text-overflow: ellipsis;
   overflow: hidden;
   /* color: rgba(255, 255, 255, 0.552); */
-  color: var(--dark-grey);
+  color: var(--font);
 }
 
 .technologies {
@@ -84,9 +98,10 @@ body {
   font-size: 14px;
   padding: 2px 8px;
   border-radius: 4px;
-  /* background-color: rgba(195, 195, 195, 0.1); */
-  background-color: var(--dark-grey);
-  color: var(--dark);
+  /* background-color: var(--technology-bg); */
+  background-color: rgba(195, 195, 195, 0.1);
+  border: 1px solid var(--dark-light);
+  color: var(--font);
   margin-right: 4px;
 }
 
@@ -114,4 +129,26 @@ body {
 
 .icon {
   cursor: pointer;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+}
+
+.projects-header > div {
+  display: flex;
+  align-items: center;
+  color: var(--dark);
+  cursor: pointer;
+}
+
+.projects-container svg {
+  transition: transform 0.3s ease;
+}
+
+.projects-header > .projects-container:hover svg {
+  transform: translateX(3px);
 }
