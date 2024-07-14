@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unknown-property */
 import './App.css'
 import { useEffect, useState } from 'react';
-import GitHubContributions from '../components/GitHubContributions'
-import axios from 'axios';
-import Header from '../components/Header';
+import GitHubContributions from './components/GitHubContributions'
+import Header from './components/Header';
+import fetchProjects from './utils/fetchGithub';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -11,28 +11,15 @@ function App() {
   const emj = ['🤠', '✨', '😎', '👾', '🤖', '⛷️']
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await axios.get('https://api.github.com/users/hennyfeliz/repos?sort=stars&order=desc');
-        const sortedProjects = response.data.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 6);
-
-        // Fetch topics for each project
-        const projectsWithTopics = await Promise.all(sortedProjects.map(async (project) => {
-          const topicsResponse = await axios.get(`https://api.github.com/repos/hennyfeliz/${project.name}/topics`, {
-            headers: { Accept: 'application/vnd.github.mercy-preview+json' }
-          });
-          return { ...project, topics: topicsResponse.data.names };
-        }));
-
-        setProjects(projectsWithTopics);
+    fetchProjects(setProjects, setLoading)
+      .then((projects) => {
+        setProjects(projects);
         setLoading(false);
-      } catch (error) {
+      })
+      .catch((error) => {
         console.error('Error fetching GitHub projects', error);
         setLoading(false);
-      }
-    };
-
-    fetchProjects();
+      });
   }, []);
 
   const formatProjectName = (name) => {
@@ -42,6 +29,21 @@ function App() {
   return (
     <div className='page-container'>
       <Header />
+      <div className='projects-header'>
+        <h3>Projects</h3>
+        <div className="projects-container">
+          <span>more</span>
+          <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M6 12H18M18 12L13 7M18 12L13 17"
+                stroke="var(--dark)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
       <div className='projects'>
         {loading ? (
           <p>Loading projects...</p>
