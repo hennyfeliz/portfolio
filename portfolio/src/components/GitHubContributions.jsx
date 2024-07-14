@@ -5,7 +5,7 @@ import 'react-calendar-heatmap/dist/styles.css';
 // import { subDays, format } from 'date-fns';
 import { subDays } from 'date-fns';
 import axios from 'axios';
-import '../styles/GitHubContributions.css';
+import '../../styles/GitHubContributions.css';
 
 const getGithubContributions = async (username) => {
   const response = await axios.get(`https://github-contributions-api.jogruber.de/v4/${username}`);
@@ -52,7 +52,7 @@ const GitHubContributions = ({ username = 'hennyfeliz' }) => {
   return (
     <div className="github-contributions">
       <div className='name-github-container'>
-        <h2>{username}&apos;s GitHub Contributions</h2>
+        <span>{username}&apos;s GitHub Contributions</span>
         <select onChange={handleYearChange} className='select_' value={year}>
           <option value="last_year">Last year</option>
           {[...Array(10)].map((_, i) => {
