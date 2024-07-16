@@ -1,0 +1,29 @@
+.ugnized-list {
+  margin: 200px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ugnized-list li {
+  position: relative;
+  background-color: var(--light);
+  border-radius: 4px;
+  padding: 1rem 3rem;
+  border-bottom: 1px solid var(--lighter);
+}
+
+.text_s {
+  color: var(--dark--dk);
+}
+
+.title_experience {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.time_ {
+  position: absolute;
+  right: 2rem;
+}
