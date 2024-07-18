@@ -5,6 +5,7 @@ import LinkedinIcon from '../assets/icons/LinkedinIcon';
 import SunIcon from '../assets/icons/SunIcon';
 import MoonIcon from '../assets/icons/MoonIcon';
 import PersonalInfo from './PersonalInfo';
+import Indic from './Indic';
 
 const Header = () => {
 
@@ -24,6 +25,7 @@ const Header = () => {
         <span>
           Henny.dev
         </span>
+        <Indic />
         <div>
           {/* GITHUB ICON */}
           <BigGithubIcon />
