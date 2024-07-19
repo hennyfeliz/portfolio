@@ -5,13 +5,13 @@
 }
 
 :root {
-  --light: #f6f6f9;
+  --light: #e2e2e29d;
   --primary: #1976d2;
   --light-primary: #cfe8ff;
   --grey: #f5f5f5;
   --dark-grey: #6666663f;
   --dark: #363949;
-  --dark--dk: #e0e0e0ad;
+  --dark--dk: #232323b0;
   --dark-light: #36394940;
   --danger: #d32f2f;
   --light-danger: #fecdd3;
@@ -30,7 +30,22 @@ body.dark {
   --grey: #171717;
   --font: #f6f6f9e1;
   --dark: #fbfbfb;
-  --tecjnology-bg: #3b3b3b19;
+  --technology-bg: #3b3b3b19;
+  --dark--dk: #e0e0e0ad;
+}
+
+a,
+icons__ {
+  color: var(--dark--dk);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+icons__:hover {
+  color: var(--dark);
 }
 
 body {
@@ -38,6 +53,17 @@ body {
   color: var(--font);
   font-family: "onest", "Roboto", sans-serif;
   overflow-x: hidden;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .page-container {
@@ -50,25 +76,45 @@ body {
 }
 
 .projects {
-  display: flex;
+  /* grid grid-cols-1 gap-3 md:grid-cols-2 */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  gap: 14px;
+  width: 100%;
+  padding: 0 10px;
+  align-self: center;
+
+  /* display: flex;
   justify-content: center;
   margin: 0 auto;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 14px; */
 }
 
 .project {
+  /* relative flex flex-col rounded-md border border-neutral-300 px-3 py-4 shadow-sm dark:border-neutral-800 */
   position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--dark-light);
+  border-radius: 8px;
+  padding: 20px;
+  padding-bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: border 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  /* position: relative;
   width: 390px;
   height: 108px;
-  /* border: 1px solid rgba(212, 212, 212, 0.153); */
   border: 2px solid var(--dark-light);
   border-radius: 8px;
   padding: 20px;
   white-space: nowrap;
   overflow: hidden;
   transition: border 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 .project:hover {
@@ -88,10 +134,9 @@ body {
 .technologies {
   position: absolute;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 4px;
   bottom: 10px;
-  padding-right: 10px;
 }
 
 .technologie {
@@ -107,6 +152,7 @@ body {
 
 .stars {
   position: absolute;
+  background-color: var(--grey);
   right: 20px;
   bottom: 10px;
   display: flex;
@@ -132,10 +178,14 @@ body {
 }
 
 .projects-header {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 97%;
+  width: 100%; */
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
 }
 
 .projects-header > div {
