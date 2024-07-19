@@ -5,9 +5,9 @@ const fetchProjects = async () => {
     const response = await axios.get(
       "https://api.github.com/users/hennyfeliz/repos?sort=stars&order=desc"
     );
-    const sortedProjects = response.data
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, 6);
+    const sortedProjects = response.data.sort(
+      (a, b) => b.stargazers_count - a.stargazers_count
+    );
 
     const projectsWithTopics = await Promise.all(
       sortedProjects.map(async (project) => {
