@@ -6,6 +6,13 @@
   justify-content: space-evenly;
 }
 
+.name-github-container span {
+  font-size: 1.5rem;
+  font-weight: 200;
+  height: 40px;
+  overflow: hidden;
+}
+
 .github-contributions {
   width: 90%;
   margin: 0 auto;
@@ -16,8 +23,12 @@
 }
 
 .color-empty {
-  /* fill: #171b22; */
-  fill: transparent;
+  fill: #171b22;
+  /* fill: transparent; */
+}
+
+.color-scale-0 {
+  fill: var(--light);
 }
 
 .color-scale-1 {
@@ -48,12 +59,18 @@
   ry: 14px;
 }
 
+.react-calendar-heatmap text {
+  font-size: 10px;
+  fill: var(--dark);
+}
+
 .select_ {
   display: flex;
   justify-content: center;
-  background-color: rgb(23, 23, 23);
-  color: rgba(255, 255, 255, 0.855);
+  background-color: var(--light);
+  color: var(--dark);
   padding: 6px 54px;
-  border: 2px solid rgba(255, 255, 255, 0.478);
+  /* border: 2px solid rgba(255, 255, 255, 0.478); */
+  border: 2px solid var(--dark-light);
   border-radius: 8px;
 }
