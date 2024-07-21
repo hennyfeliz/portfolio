@@ -1,0 +1,18 @@
+.complete-project-list {
+  width: 100%;
+}
+
+.project-list-header {
+  display: flex;
+  align-items: center;
+  color: var(--dark);
+}
+
+.projects_list {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(390px, 1fr)); */
+  gap: 14px;
+  width: 100%;
+  margin-top: 10px;
+  align-self: center;
+}
