@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import ProjectList from './components/ProjectList';
 import Experience from './components/Experience';
+import CeriticateViewer from './CeriticateViewer';
 
 function App() {
 
@@ -20,40 +21,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='page-container fade-up'>
-        {/* HEADER */}
-        <Header />
-        <Routes>
-
-          {/* BASE INITIAL COMPONENT */}
-          <Route path='/' element={<>
-            {/* PROJECTS HEADER */}
-            <ProjectsHeader />
-
-            {/* PROJECTS */}
-            <Projects />
-
-          </>} />
-
-          {/* CONTRIBUTIONS */}
-          <Route path='/contributions' element={<>
-            <GitHubContributions username='hennyfeliz' />
-          </>} />
-
-          {/* PROJECT LIST */}
-          <Route path='/projects' element={<>
-            <ProjectList />
-          </>} />
-
-          {/* EXPERIENCE */}
-          <Route path='/experience' element={<>
-            <Experience />
-          </>} />
-
-
-        </Routes>
-
-      </div>
+      <CeriticateViewer />
     </BrowserRouter>
   );
 }
